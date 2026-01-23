@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --transition-colors: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  color-scheme: dark;
+}
+
+html:not(.dark) {
+  --background: #ededed;
+  --foreground: #0a0a0a;
+  color-scheme: light;
+}
+
+body,
+button,
+a,
+div {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Paleta de cores - Light Mode */
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.bg-zinc-50 {
+  background-color: #fafafa;
+}
+
+.bg-zinc-100 {
+  background-color: #f4f4f5;
+}
+
+.bg-zinc-200 {
+  background-color: #e4e4e7;
+}
+
+.bg-zinc-300 {
+  background-color: #d4d4d8;
+}
+
+.bg-zinc-900 {
+  background-color: #27272a;
+}
+
+.bg-zinc-950 {
+  background-color: #09090b;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-zinc-300 {
+  color: #d4d4d8;
+}
+
+.text-zinc-400 {
+  color: #a1a1a6;
+}
+
+.text-zinc-600 {
+  color: #52525b;
+}
+
+.text-zinc-700 {
+  color: #3f3f46;
+}
+
+.text-zinc-800 {
+  color: #27272a;
+}
+
+.text-zinc-900 {
+  color: #18181b;
+}
+
+.border-black {
+  border-color: #000000;
+}
+
+.border-white {
+  border-color: #ffffff;
+}
+
+.border-zinc-200 {
+  border-color: #e4e4e7;
+}
+
+.border-zinc-300 {
+  border-color: #d4d4d8;
+}
+
+.border-zinc-700 {
+  border-color: #3f3f46;
+}
+
+.border-zinc-800 {
+  border-color: #27272a;
+}
+
+/* Dark Mode - sobrescrever cores */
+html.dark .bg-white {
+  background-color: #000000;
+}
+
+html.dark .bg-black {
+  background-color: #ffffff;
+}
+
+html.dark .bg-zinc-50 {
+  background-color: #09090b;
+}
+
+html.dark .bg-zinc-100 {
+  background-color: #27272a;
+}
+
+html.dark .bg-zinc-200 {
+  background-color: #3f3f46;
+}
+
+html.dark .bg-zinc-900 {
+  background-color: #d4d4d8;
+}
+
+html.dark .bg-zinc-950 {
+  background-color: #e4e4e7;
+}
+
+html.dark .text-black {
+  color: #ffffff;
+}
+
+html.dark .text-white {
+  color: #000000;
+}
+
+html.dark .text-zinc-600 {
+  color: #a1a1a6;
+}
+
+html.dark .text-zinc-700 {
+  color: #d4d4d8;
+}
+
+html.dark .text-zinc-900 {
+  color: #e4e4e7;
+}
+
+html.dark .border-black {
+  border-color: #ffffff;
+}
+
+html.dark .border-white {
+  border-color: #000000;
+}
