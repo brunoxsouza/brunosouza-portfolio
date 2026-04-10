@@ -25,16 +25,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
-    // Detectar tema ao montar (sincronizar com o script do layout)
     const html = document.documentElement;
     const isDark = html.classList.contains('dark');
     const currentTheme = isDark ? 'dark' : 'light';
     
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTheme(currentTheme);
   }, []);
 
   useEffect(() => {
-    // Atualizar classe do HTML quando o tema mudar
     applyTheme(theme);
   }, [theme]);
 

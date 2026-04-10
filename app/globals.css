@@ -8,7 +8,9 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
+
 
 html.dark {
   --background: #0a0a0a;
@@ -173,4 +175,24 @@ html.dark .border-black {
 
 html.dark .border-white {
   border-color: #000000;
+}
+
+#projetos {
+  @media screen and (max-width: 768px) {
+    margin-top: 6rem;
+  }
+}
+
+#estudos {
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+    padding-top: 0 !important;
+  }
+}
+
+#faculdade {
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+    padding-top: 0 !important;
+  }
 }

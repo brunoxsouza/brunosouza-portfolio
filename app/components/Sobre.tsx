@@ -2,10 +2,15 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import unisantaLogo from '../assets/unisanta-logo.jpeg';
 import corebizLogo from '../assets/corebiz.jpeg';
 
 export default function Sobre() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const [avatar, setAvatar] = useState<string | null>(null);
 
   useEffect(() => {
@@ -16,9 +21,14 @@ export default function Sobre() {
   }, []);
 
   return (
-    <section id="sobre" className="py-16 md:py-20 bg-zinc-50 dark:bg-zinc-950 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+    <section id="sobre" className="py-16 md:py-20 px-4">
+      <motion.div
+        ref={ref}
+        className="max-w-6xl mx-auto"
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="pt-16 grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           <div className="space-y-6 order-2 md:order-1">
             <div className="bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700 rounded-lg h-64 sm:h-80 md:h-96 flex items-center justify-center overflow-hidden">
               {avatar ? (
@@ -72,7 +82,6 @@ export default function Sobre() {
             </div>
           </div>
 
-          {/* Texto */}
           <div className="order-1 md:order-2">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-black dark:text-white leading-tight">
               Sobre Mim
@@ -120,7 +129,7 @@ export default function Sobre() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

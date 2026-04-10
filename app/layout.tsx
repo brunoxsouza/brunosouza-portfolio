@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { NavigationProvider } from "./contexts/NavigationContext";
 import Header from "./components/Header";
 
 const geistSans = Geist({
@@ -25,21 +26,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="scroll-smooth">
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
         <script
+          id="theme-script"
           dangerouslySetInnerHTML={{
             __html: `
-              (function() {
-                const theme = localStorage.getItem('theme');
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const isDark = theme ? theme === 'dark' : prefersDark;
-                
-                if (isDark) {
-                  document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');
-                }
+              (function () {
+                try {
+                  const theme = localStorage.getItem('theme');
+                  if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
               })();
             `,
           }}
@@ -49,8 +50,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-          <Header />
-          {children}
+          <NavigationProvider>
+            <Header />
+            {children}
+          </NavigationProvider>
         </ThemeProvider>
       </body>
     </html>

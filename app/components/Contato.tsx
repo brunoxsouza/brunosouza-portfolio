@@ -1,17 +1,30 @@
+'use client';
+
 import linkedinLogo from '../assets/linkedin.png';
 import githubLogo from '../assets/github.png';
 import Image from 'next/image';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 
 export default function Contato() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const socialLinks = [
     { name: "LinkedIn", icon: linkedinLogo, link: "https://linkedin.com" },
     { name: "GitHub", icon: githubLogo, link: "https://github.com" },
   ];
 
   return (
-    <section id="contato" className="py-20 bg-gradient-to-b from-zinc-100 to-white dark:from-black dark:to-zinc-900 px-4">
-      <div className="max-w-4xl mx-auto">
+    <section className="pt-25 py-20  px-4">
+      <motion.div
+        ref={ref}
+        id="contato"
+        className="max-w-4xl mx-auto"
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black dark:text-white">
             Vamos Colaborar?
@@ -54,7 +67,7 @@ export default function Contato() {
           </div>
           <button
             type="submit"
-            className="w-full bg-black dark:bg-white text-white dark:text-black font-bold py-3 rounded-lg hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors"
+            className="w-full bg-black dark:bg-white text-white dark:text-black font-bold py-3 rounded-lg hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors cursor-pointer"
           >
             Enviar Mensagem
           </button>
@@ -81,7 +94,7 @@ export default function Contato() {
             © 2026 Bruno de Souza Silva. Todos os direitos reservados.
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
