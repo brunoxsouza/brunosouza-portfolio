@@ -97,59 +97,19 @@ export default function Projetos() {
             >
                 <section className="pt-0 py-20 bg-white dark:bg-black px-4">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black dark:text-white">
-                        Features em destaque 
+                        Jornada Profissional
                     </h2>
                     <p className="text-zinc-600 dark:text-zinc-400 text-lg mb-12">
-                        Breve descrição de features durante minha jornada profissional
+                        Projetos de grande impacto (Working in progress)
                     </p>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {projects.map((project, index) => (
-                            <a
-                                key={index}
-                                href={project.link}
-                                className="group bg-white dark:bg-zinc-900 rounded-lg overflow-hidden hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700"
-                            >
-                                <div className="h-auto bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700 overflow-hidden">
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
-                                        width={500}
-                                        height={300}
-                                        sizes="(max-width: 768px) 100vw, 33vw"
-                                        style={{ width: '100%', height: 'auto' }}
-                                        priority={index < 2} />
-                                </div>
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-black dark:text-white mb-2">
-                                        {project.title}
-                                    </h3>
-                                    <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                                        {project.description}
-                                    </p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.technologies.map((tech, i) => (
-                                            <div
-                                                key={i}
-                                                className="px-4 py-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full text-zinc-900 dark:text-zinc-100 font-medium hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:shadow-md transition-all duration-300 flex items-center gap-2"
-                                            >
-                                                {tech.icon && (typeof tech.icon === 'string' ? tech.icon : <tech.icon className="w-4 h-4" />)}
-                                                {tech.name}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
                 </section>
                 <section id="estudos" className="pt-25 py-20 bg-white dark:bg-black px-4">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black dark:text-white">
-                        Projetos de Estudos
+                        Projetos de Estudos pós faculdade
                     </h2>
                     <p className="text-zinc-600 dark:text-zinc-400 text-lg mb-12">
-                        Seleção dos meus projetos pessoais mais impactantes e relevantes
+                        Alguns projetos durante o curso GoStack da RocketSeat.
                     </p>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -198,49 +158,8 @@ export default function Projetos() {
                         Projeto final da Faculdade (TCC)
                     </h2>
                     <p className="text-zinc-600 dark:text-zinc-400 text-lg mb-12">
-                        Seleção dos meus projetos pessoais mais impactantes e relevantes
+                        Aplicativo mobile android de saúde durante o desenvolvimento do meu projeto final de faculdade. (Working in progress)
                     </p>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {projects.map((project, index) => (
-                            <a
-                                key={index}
-                                href={project.link}
-                                className="group bg-white dark:bg-zinc-900 rounded-lg overflow-hidden hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700"
-                            >
-                                <div className="h-auto bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700 overflow-hidden">
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
-                                        width={500}
-                                        height={300}
-                                        sizes="(max-width: 768px) 100vw, 33vw"
-                                        style={{ width: '100%', height: 'auto' }}
-                                        priority={index < 2} />
-                                </div>
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-black dark:text-white mb-2">
-                                        {project.title}
-                                    </h3>
-                                    <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                                        {project.description}
-                                    </p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.technologies.map((tech, i) => (
-                                            <div
-                                                key={i}
-                                                className="px-4 py-2 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full text-zinc-900 dark:text-zinc-100 font-medium hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:shadow-md transition-all duration-300 flex items-center gap-2"
-                                            >
-                                                {tech.icon && (typeof tech.icon === 'string' ? tech.icon : <tech.icon className="w-4 h-4" />)}
-                                                {tech.name}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
                 </section>
             </motion.div>
         </section>
