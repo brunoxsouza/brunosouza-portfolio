@@ -34,47 +34,8 @@ export default function Contato() {
           </p>
         </div>
 
-        <form className="bg-white dark:bg-zinc-900 rounded-lg p-8 mb-12 border border-zinc-200 dark:border-zinc-800 shadow-sm dark:shadow-lg">
-          <div className="mb-6">
-            <label className="block text-black dark:text-white font-semibold mb-2">
-              Nome
-            </label>
-            <input
-              type="text"
-              placeholder="Seu nome"
-              className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-800 text-black dark:text-white rounded-lg border border-zinc-200 dark:border-zinc-700 focus:border-black dark:focus:border-white focus:outline-none transition-colors placeholder-zinc-400 dark:placeholder-zinc-500"
-            />
-          </div>
-          <div className="mb-6">
-            <label className="block text-black dark:text-white font-semibold mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              placeholder="seu.email@exemplo.com"
-              className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-800 text-black dark:text-white rounded-lg border border-zinc-200 dark:border-zinc-700 focus:border-black dark:focus:border-white focus:outline-none transition-colors placeholder-zinc-400 dark:placeholder-zinc-500"
-            />
-          </div>
-          <div className="mb-6">
-            <label className="block text-black dark:text-white font-semibold mb-2">
-              Mensagem
-            </label>
-            <textarea
-              placeholder="Sua mensagem aqui..."
-              rows={5}
-              className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-800 text-black dark:text-white rounded-lg border border-zinc-200 dark:border-zinc-700 focus:border-black dark:focus:border-white focus:outline-none transition-colors resize-none placeholder-zinc-400 dark:placeholder-zinc-500"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-black dark:bg-white text-white dark:text-black font-bold py-3 rounded-lg hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors cursor-pointer"
-          >
-            Enviar Mensagem
-          </button>
-        </form>
-
         <div className="text-center">
-          <p className="text-zinc-600 dark:text-zinc-400 mb-6">Ou conecte-se comigo através das redes:</p>
+          <p className="text-zinc-600 dark:text-zinc-400 mb-6">Conecte-se comigo através das redes:</p>
           <div className="flex gap-4 justify-center flex-wrap">
             {socialLinks.map((link, index) => (
               <a
